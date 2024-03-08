@@ -1,0 +1,268 @@
+(Problem 01 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix, Row, Col);
+	Print::PrintMatrixData(Matrix, Row, Col, "\n\nThe following is a ROW x COL Random matrix : ");
+	
+
+}
+
+
+========================================================================================================
+(Problem 02 :)
+
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix, Row, Col);
+	Print::PrintMatrixData(Matrix, Row, Col, "\n\nThe following is a ROW x COL Random matrix : ");
+	Print::SumOfAllElementsInRow(Matrix, Row, Col, "\n\nThe following are the sum of each row in the matrix : ");
+	
+
+}
+=========================================================================================================
+(Problem 03 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix, Row, Col);
+	Print::PrintMatrixData(Matrix, Row, Col, "\n\nThe following is a ROW x COL Random matrix : ");
+	Print::SumOfAllElementsInRow1DimentionArray(Matrix, Row, Col);
+	
+
+}
+
+======================================================================================================
+(Problem 04 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix, Row, Col);
+	Print::PrintMatrixData(Matrix, Row, Col, "\n\nThe following is a ROW x COL Random matrix : ");
+	Print::SumOfAllElementsInCol(Matrix, Row, Col, "\n\nThe following are the sum of each row in the matrix : ");
+	
+
+}
+
+=====================================================================================================
+(Problem 05 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix, Row, Col);
+	Print::PrintMatrixData(Matrix, Row, Col, "\n\nThe following is a ROW x COL Random matrix : ");
+	Print::SumOfAllElementsInCol1DimentionArray(Matrix, Row, Col);
+	
+
+}
+
+====================================================================================================
+(Problem 06 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithOrderNumber(Matrix, Row, Col);
+	Print::PrintMatrixData(Matrix, Row, Col, "\n\nThe following is a ROW x COL Order matrix : ");
+	
+	
+
+}
+=============================================================================================
+(Problem 07 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithOrderNumber(Matrix1, Row, Col);
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	Print::TransporeMatrixIntoAnotherMatrix(Matrix1, Row, Col);
+	
+	
+
+}
+=============================================================================================
+(Problem 08 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix2, Row, Col);
+	Print::PrintMatrixDataPRINTF(Matrix1, Row, Col, " Matrix 1 : ");
+	Print::PrintMatrixDataPRINTF(Matrix2, Row, Col, "\n\nMatrix 2 : ");
+	Calculation::CalculateMaltiplyTowMatrix(Matrix1, Matrix2, Result, Row, Col);
+	Print::PrintMatrixDataPRINTF(Result, Row, Col, "\n\nResults : ");
+	
+
+}
+==================================================================================================
+(Problem 09 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	Print::PrintdMiddleRowInMatrix(Matrix1, Row, Col);
+	Print::PrintMiddleColInMatrix(Matrix1, Row, Col);
+
+	
+	
+
+}
+==================================================================================================
+(Problem 10 :)
+
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+	
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+
+	printf("\n\nSum Of Matrix is : %d \n", Calculation::SumOfAllElementsInMatrix(Matrix1, Row, Col));
+
+
+
+	
+
+}
+

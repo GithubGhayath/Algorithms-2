@@ -1,0 +1,257 @@
+(Problem 41 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	
+	
+
+	vector<string> S1 = { "Ali","Maher","Ahmad","Ghayath" };
+	
+	cout << "Vector After Join : \n" << texts::JoinString(S1) << endl;
+	
+}
+===========================================================================================
+(Problem 42 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	
+
+	vector<string> S1 = { "Ali","Maher","Ahmad","Ghayath" };
+	string Array[] = { "Ali","Maher","Ahmad","Ghayath" };
+
+	cout << "Array After Join : \n" << texts::JoinString(Array,4,"##") << endl;
+	
+}
+===========================================================================================
+(Problem 43 :)
+
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	
+
+	
+
+	cout << "\n\nString After Reversing Words : \n" << texts::ReversWords(S1," ") << endl;
+	
+}
+===========================================================================================
+(Problem 44 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+// stringName.replce(Pos Of Text,length Of text that want to repalce,NewText)
+
+int main()
+{
+	string S1 = "Wellcome to Jordan , Jordan is a nice country";
+		//ReadText("\nPlease Enter Your string : ");
+	
+
+	
+
+	cout << "\n\nString After Replace : \n" << texts::ReplaceBuildInFunction(S1, "Jordan", "USA") << endl;
+	
+}
+===========================================================================================
+(Problem 45 :)
+
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+// stringName.replce(Pos Of Text,length Of text that want to repalce,NewText)
+
+int main()
+{
+	string S1 = "Wellcome to Jordan , Jordan is a nice country";
+		//ReadText("\nPlease Enter Your string : ");
+	
+
+	
+
+	cout << "\n\nString After Replace much Case: \n" << texts::ReplaceBuildFunction(S1, "Jordan", "USA") << endl;
+	cout << "\n\n\nString After Replace dont much Case: \n" << texts::ReplaceBuildFunctionDontMuchCase(S1, "Jordan", "USA") << endl;
+
+	
+}
+===========================================================================================
+(Problem 46 :)
+
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+// stringName.replce(Pos Of Text,length Of text that want to repalce,NewText)
+
+int main()
+{
+	string S1 = "We,llc.ome to Jor*#dan , Jordan is a ni@ce cou%ntry";
+		//ReadText("\nPlease Enter Your string : ");
+	
+
+	cout << "Orginal string : " << S1 << endl;
+	cout << "\n\nPunctioautions Removed : \n" << texts::RemoveAllPunctiouations(S1) << endl;
+
+
+	
+}
+===========================================================================================
+(Problem 47 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+// stringName.replce(Pos Of Text,length Of text that want to repalce,NewText)
+
+int main()
+{
+	
+	
+
+	cout << "Client Record for saving is : \n" << texts::JoinString(File::FillDataOfClient(), "#//#") << endl;
+
+
+	
+}
+===========================================================================================
+(Problem 48 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+// stringName.replce(Pos Of Text,length Of text that want to repalce,NewText)
+
+int main()
+{
+	
+	string S1 = "A150#//#5555#//#Ghayath alali#//#+963 552 515 961#//#5000.000000";
+
+
+	cout << "Line Record is : \n" << S1 << endl;
+
+	cout << "The Following is the extracted client record : \n";
+	File::ClientCard(File::FillDataOfClient(texts::Split(S1, "#//#")));
+
+
+	
+}
+
+===========================================================================================
+(Problem 49 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+int main()
+{
+	
+	File::AddClients();
+	
+}
+
+===========================================================================================
+(Problem 50 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+
+
+	File::ShowAllClients("File.txt");
+
+	
+}
+===========================================================================================
+(Problem 51 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+int main()
+{
+	
+
+	File::SearchForClient("File.txt");
+}
+===========================================================================================
+(Problem 52 :)
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+int main()
+{
+	
+	
+
+
+	File::DaleteClient("File.txt");
+
+	
+}
+
+===========================================================================================
+(Problem 53 :)
+
+
+

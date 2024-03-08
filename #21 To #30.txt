@@ -1,0 +1,231 @@
+(Problem 21 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+int ReadNumber(string message,int from=1,int to=10)
+{
+	int number;
+	do
+	{
+		cout << message ;
+		cin >> number;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invaled number, Please try again :)\nEnter a number :  ";
+			cin >> number;
+		}
+	} while (!(number > from && number < to));
+		return number;
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	Print::PrintFinonacciSeries(10);
+
+	
+
+}
+
+========================================================================================================
+(Problem 22 :)
+
+#include<iostream>
+#include"Matrix.h";
+
+using namespace std;
+
+
+
+int main()
+{
+
+	Print::PrintFinonacciSeriesusingRe(10);
+}
+
+========================================================================================================
+(Problem 23 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	Letter::PrintFirstLettersFromWords(ReadText("\nPlease Enter Your string : "));
+	
+}
+
+========================================================================================================
+(Problem 24 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	cout << "\n\nString After Conversion : \n" << Letter::ConverdFirstLetterToUpper(ReadText("\nPlease Enter Your string : ")) << endl;
+
+
+
+
+	system("pause>0");
+}
+
+========================================================================================================
+(Problem 25 :)
+
+#include<iostream>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	Letter::ConverdFirstLetterToUpper(S1);
+
+
+
+
+	system("pause>0");
+}
+========================================================================================================
+(Problem 26 :)
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	Letter::ConverdFirstLetterTolower(S1);
+
+
+
+
+	system("pause>0");
+}
+========================================================================================================
+(Problem 27 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	
+
+
+	cout << "\n\nString After Upper : \n" << Letter::toUpperAllString(S1) << endl << endl;
+	cout << "\n\nString After Lower : \n" << Letter::toLowerAllString(S1) << endl << endl;
+
+
+
+
+	system("pause>0");
+}
+
+========================================================================================================
+(Problem 28 :)
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	
+	char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	cout << "\n\nChar after inverting case : \n" << Letter::ConverdCharacter(C1) << endl;
+
+
+	
+
+
+
+
+	system("pause>0");
+}
+
+========================================================================================================
+(Problem 29 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	//char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	cout << "\n\nstring after inverting all letters case : \n" << Letter::ConvertUPPER_To_LOWER(S1) << endl;
+
+
+	
+
+
+
+
+	system("pause>0");
+}
+========================================================================================================
+(Problem 30 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+
+
+	Letter::PrintDataOfString(S1);
+
+
+	system("pause>0");
+}

@@ -1,0 +1,403 @@
+(Problem 11 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+	
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix2, Row, Col);
+
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	Print::PrintMatrixDataSETW(Matrix2, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+
+
+	if (Chech::AreMatricesEqul(Calculation::SumOfAllElementsInMatrix(Matrix1, Row, Col), Calculation::SumOfAllElementsInMatrix(Matrix2, Row, Col)))
+		cout << "\nYES : Matrices are Equl" << endl;
+	else
+		cout << "\nNO : Matrices are Not Equl" << endl;	
+
+}
+=======================================================================================================
+(Problem 12 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+	
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix2, Row, Col);
+
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	Print::PrintMatrixDataSETW(Matrix2, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+
+
+	if (Chech::AreMatricesTypical(Matrix1, Matrix2,Row,Col))
+		cout << "\nYES : Matrices are Typical" << endl;
+	else
+		cout << "\nNO : Matrices are Not Typical" << endl;	
+
+}
+=======================================================================================================
+(Problem 13 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3] =
+	{
+		{1,0,0},
+		{0,1,0},
+		{0,0,1}
+	};
+
+	int Row = 3;
+	int Col = 3;
+	
+	
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+
+	if (Chech::IsMatrixIdentity(Matrix1,Row,Col))
+		cout << "\nYES : Matrix is Identity" << endl;
+	else
+		cout << "\nNO : Matrix is Not Identity" << endl;
+
+}
+==============================================================================================================
+(Problem 14 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3] =
+	{
+		{2,0,0},
+		{0,2,0},
+		{0,0,2}
+	};
+
+	int Row = 3;
+	int Col = 3;
+	
+
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+
+
+	if (Chech::IsMatrixScalar(Matrix1,Row,Col))
+		cout << "\nYES : Matrix is Scalar" << endl;
+	else
+		cout << "\nNO : Matrix is Not Scalar" << endl;
+
+}
+
+=========================================================================================================
+(Problem 15 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+int ReadNumber(string message,int from=1,int to=10)
+{
+	int number;
+	do
+	{
+		cout << message ;
+		cin >> number;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invaled number, Please try again :)\nEnter a number :  ";
+			cin >> number;
+		}
+	} while (!(number > from && number < to));
+		return number;
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+	
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	//FillMatrix::FillMatrixWithRandomNumbers(Matrix2, Row, Col);
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+	
+	int NumberForSearch = ReadNumber("\nEnter a number to count : ");
+	//Print::PrintMatrixDataSETW(Matrix2, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	printf("\n\nNumber [%d] Count In Matrix is : %d\n", NumberForSearch, Calculation::CountNumberInMatrix(Matrix1, Row, Col, NumberForSearch));
+
+	
+
+}
+=========================================================================================================
+(Problem 16 :)
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+int ReadNumber(string message,int from=1,int to=10)
+{
+	int number;
+	do
+	{
+		cout << message ;
+		cin >> number;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invaled number, Please try again :)\nEnter a number :  ";
+			cin >> number;
+		}
+	} while (!(number > from && number < to));
+		return number;
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3]
+		=
+	{
+		{0,0,3},
+		{0,0,5},
+		{1,2,0}
+	};
+	int Row = 3;
+	int Col = 3;
+	
+	//FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+	
+	
+	if (Check::IsSparceMatrix(Matrix1, Row, Col))
+		cout << "\n\nYES : It Is Sparce " << endl;
+	else
+		cout << "\n\nNO : It Is Not Sparce " << endl;
+
+	
+
+}
+====================================================================================================
+(Problem 17 :)
+
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+int ReadNumber(string message,int from=1,int to=10)
+{
+	int number;
+	do
+	{
+		cout << message ;
+		cin >> number;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invaled number, Please try again :)\nEnter a number :  ";
+			cin >> number;
+		}
+	} while (!(number > from && number < to));
+		return number;
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+	
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+	int Number = ReadNumber("Please enetr a Number for search ?");
+	
+	
+	
+	if (SearchInMatrix::IsNumberInMatrix(Matrix1, Row, Col, Number))
+		printf("\n\nThe Number [%d] Is Found\n");
+	else
+		printf("\n\nThe Number [%d] Is Not Found\n");
+
+
+	
+
+}
+====================================================================================================
+(Problem 18 :)
+
+
+
+
+====================================================================================================
+(Problem 19 :)
+
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+int ReadNumber(string message,int from=1,int to=10)
+{
+	int number;
+	do
+	{
+		cout << message ;
+		cin >> number;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invaled number, Please try again :)\nEnter a number :  ";
+			cin >> number;
+		}
+	} while (!(number > from && number < to));
+		return number;
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3], Matrix2[3][3], Result[3][3];
+	int Row = 3;
+	int Col = 3;
+	
+	FillMatrix::FillMatrixWithRandomNumbers(Matrix1, Row, Col);
+	//FillMatrix::FillMatrixWithRandomNumbers(Matrix2, Row, Col);
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+	printf("\n\nMax Number In Matrix is : %d\n", SearchInMatrix::SearchForMaxNumber(Matrix1, Row, Col));
+	printf("Min Number In Matrix is : %d \n\n", SearchInMatrix::SearchForMinNumber(Matrix1, Row, Col));
+	
+	//Print::PrintMatrixDataSETW(Matrix2, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+	
+
+
+	
+
+}
+====================================================================================================
+(Problem 20 :)
+#include<iostream>
+#include"Matrix.h"
+
+using namespace std;
+
+int ReadNumber(string message,int from=1,int to=10)
+{
+	int number;
+	do
+	{
+		cout << message ;
+		cin >> number;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Invaled number, Please try again :)\nEnter a number :  ";
+			cin >> number;
+		}
+	} while (!(number > from && number < to));
+		return number;
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	
+	int Matrix1[3][3]=
+	{
+		{1,2,1},
+		{2,3,2},
+		{5,6,5}
+	};
+	int Row = 3;
+	int Col = 3;
+	
+	
+	Print::PrintMatrixDataSETW(Matrix1, Row, Col, "The Following is a 3x3 Ordered Matrix : \n ");
+	
+	cout << Print::IsPalindromeMatrix(Matrix1, Row, Col) << endl;	
+
+}

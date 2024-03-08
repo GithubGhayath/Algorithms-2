@@ -1,0 +1,222 @@
+(Problem 31 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	//char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	Letter::PrintDataOfString(S1);
+
+	
+
+	cout << "\n\nString length     : " << Letter::CountLetter(S1, enWhatToCount::All) << endl;
+	cout << "Capital Letters   : " << Letter::CountLetter(S1, enWhatToCount::Capital) << endl;
+	cout << "Small Letters     : " << Letter::CountLetter(S1, enWhatToCount::Small) << endl;
+
+
+
+
+
+	system("pause>0");
+}
+
+=======================================================================================================
+(Problem 32 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	Letter::CountLetterInputFromUser(S1, C1);
+
+
+
+
+	system("pause>0");
+}
+=======================================================================================================
+(Problem 33 :)
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	Letter::CountLetterMatchCase(S1, C1);
+
+
+
+
+	system("pause>0");
+}
+=======================================================================================================
+(Problem 34 :)
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	//string S1 = ReadText("\nPlease Enter Your string : ");
+	char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	if (Letter::IsVowel(C1))
+		cout << "\n\nYES, letter \'" << C1 << "\' is vowel" << endl;
+	else
+		cout << "\n\nNO, letter \'" << C1 << "\' is not vowel" << endl;
+
+
+}
+=======================================================================================================
+(Problem 35 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	//char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	
+	cout << "\n\nNumber Of Vowels is : " << Letter::CountVowelsLetters(S1) << endl;
+}
+=======================================================================================================
+(Problem 36 :)
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	//char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	
+	Letter::PrintVowelsLetterInString(S1);
+}
+
+=======================================================================================================
+(Problem 37 :)
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	//char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	
+	Letter::PrintWordsInString(S1);
+}
+=======================================================================================================
+(Problem 38 :)
+
+#include<iostream>
+
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	//char C1 = ReadCharracter("\nPlease Enter a Character : ");
+
+	
+	cout << "\n\nThe number of words in your string is : " << Letter::CountWOrdsInString(S1) << endl;
+}
+=======================================================================================================
+(Problem 39 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	string S1 = ReadText("\nPlease Enter Your string : ");
+	vector<string> Words = texts::Split(S1);
+
+
+
+	cout << "\n\nTokenes : " << Words.size() << endl;
+	for (string& Word : Words)
+	{
+		cout << Word << endl;
+	}
+
+	
+	
+}
+=======================================================================================================
+(Problem 40 :)
+
+#include<iostream>
+#include<vector>
+#include"string.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	//string S1 = ReadText("\nPlease Enter Your string : ");
+	
+
+	string S1 = "     Ghayath     ";
+	cout << "string : " << S1 << endl;
+	cout << "\n\nTirm Right : " << texts::TrimRightUsingErase(S1) << endl;
+	cout << "Tirm left : " << texts::TrimLeftUsingErase(S1) << endl;
+	cout << "Tirm : " <<S1 << endl;
+	
+}

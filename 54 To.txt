@@ -1,0 +1,91 @@
+//string ShortDay(short Index)
+void PrintDateToDay(stDate Date)
+{
+    
+    cout << "Today is " << ShortDay(DayIndex(Date)) << " , " << Date.Day << "/" << Date.Month << "/" << Date.Year << endl << endl;
+}
+bool IsEndOfWeek(stDate Date)
+{
+    return ShortDay(DayIndex(Date)) == "Sat";// true : End week  
+}
+bool IsBusinessDay(stDate Date)
+{
+    if (DayIndex(Date) != enDays::Fri && DayIndex(Date) != enDays::Sat)
+    {
+        return true; // Day BusinessDay
+    }
+    else
+        return false; //Holiday
+}
+short CountDayUntilEndOfWeek(stDate Date)
+{
+    short count = 0;
+    while (!IsEndOfWeek(Date))
+    {
+        count++;
+        Date.Day += 1;
+    }
+    
+    return count;
+
+}
+short CountDayUntilEndOfMonth_UsingFunction_(stDate Date)
+{
+    return CheckAndReturnNumberOfDayInMonthShortLogic(Date.Year, Date.Month) - Date.Day;
+}
+short CountDayUntilEndOfMonth(stDate Date)
+{
+    short Count = 0;
+    for (int i = Date.Day; i < CheckAndReturnNumberOfDayInMonthShortLogic(Date.Year, Date.Month); i++)
+    {
+        Count++;
+    }
+    return Count;
+}
+short CountDayUntilEndOfYear(stDate Date)
+{
+    short Count = 0;
+
+    if (Date.Month != 13)
+    {
+        
+        Count = CheckAndReturnNumberOfDayInMonthShortLogic(Date.Year, Date.Month);
+        Date.Month += 1;
+        Count += CountDayUntilEndOfYear(Date);
+    }
+    else
+        return   Count - Date.Day;
+}
+void Date()
+{
+    stDate Date = GetDate();
+    PrintDateToDay(Date);
+    cout << "Is it end of week ? " << endl;
+    (IsEndOfWeek(Date)) ? cout << "Yes it is a week end\n\n" : cout << "No Today is "<<Date.Day<<", not a week end\n\n";
+    cout << "\nIs a Busness Day ? " << endl;
+    (IsBusinessDay(Date)) ? cout << "Yes it is a busness day\n\n" : cout << "No it is not a busness day\n\n";
+
+
+    cout << "Days Until end of week : " << CountDayUntilEndOfWeek(Date) << " Day(s)." << endl;
+    cout << "Days Until end of month : " << CountDayUntilEndOfMonth_UsingFunction_(Date) << " Day(s)." << endl;
+    cout << "Days Until end of year : " << CountDayUntilEndOfYear(Date) << endl;
+
+}
+
+
+int main()
+{
+
+ 
+    
+  
+      Date();
+
+   system("pause>0");
+   
+
+   
+
+}
+
+==================================================================================================
